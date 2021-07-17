@@ -1,0 +1,27 @@
+name: CI
+
+on:
+  pull_request:
+    branches: [master]
+
+jobs:
+  build_deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+      - name: dependence
+        run: npm ci
+
+      - name: pages build
+        run: npm run docs:build
+
+      - name: deploy
+        run: |
+          cd docs/.vuepress/dist
+          git init
+          git config user.name "xiaofuyesnew"
+          git config user.email "xiaofuyesnew@qq.com"
+          git add -A
+          git commit -m 'deploy pages'
+          git push -f "https://${{ secrets.DEPLOY_TOKEN }}@github.com/jishu-lowcode/jishu-lowcode.github.io.git" master:pages

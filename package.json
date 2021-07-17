@@ -4,5 +4,13 @@
   "main": "index.js",
   "repository": "git@github.com:jishu-lowcode/jishu-lowcode.github.io.git",
   "author": "xiaofuyesnew <xiaofuyesnew@qq.com>",
-  "license": "MIT"
+  "license": "MIT",
+  "scripts": {
+    "docs:dev": "vuepress dev docs",
+    "docs:build": "vuepress build docs"
+  },
+  "devDependencies": {
+    "vuepress": "^2.0.0-beta.22",
+    "vuepress-vite": "^2.0.0-beta.22"
+  }
 }
