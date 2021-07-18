@@ -1,13 +1,19 @@
 <template>
   <el-container>
-    <el-header v-if="props.header">header</el-header>
+    <el-header v-if="header">
+      <Head />
+    </el-header>
     <el-container>
-      <el-aside v-if="props.aside">aside</el-aside>
+      <el-aside v-if="aside">
+        <Side />
+      </el-aside>
       <el-container>
         <el-main>
           <slot></slot>
         </el-main>
-        <el-footer v-if="props.footer">footer</el-footer>
+        <el-footer v-if="footer">
+          <Foot />
+        </el-footer>
       </el-container>
     </el-container>
   </el-container>
@@ -17,9 +23,12 @@
 </style>
 
 <script setup>
+import Head from './Head.vue'
+import Foot from './Foot.vue'
+import Side from './Side.vue'
 import { defineProps } from 'vue'
 
-const props = defineProps({
+defineProps({
   header: {
     type: Boolean,
     default: true
