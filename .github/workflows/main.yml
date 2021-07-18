@@ -14,11 +14,11 @@ jobs:
         run: npm ci
 
       - name: pages build
-        run: npm run docs:build
+        run: npm run build
 
       - name: deploy
         run: |
-          cd docs/.vuepress/dist
+          cd dist
           git init
           git config user.name "xiaofuyesnew"
           git config user.email "xiaofuyesnew@qq.com"

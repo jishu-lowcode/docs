@@ -6,11 +6,18 @@
   "author": "xiaofuyesnew <xiaofuyesnew@qq.com>",
   "license": "MIT",
   "scripts": {
-    "docs:dev": "vuepress dev docs",
-    "docs:build": "vuepress build docs"
+    "dev": "vite",
+    "build": "vite build"
   },
   "devDependencies": {
-    "vuepress": "^2.0.0-beta.22",
-    "vuepress-vite": "^2.0.0-beta.22"
+    "@vitejs/plugin-vue": "^1.2.5",
+    "@vue/compiler-sfc": "^3.1.5",
+    "sass": "^1.35.2",
+    "vite": "^2.4.2"
+  },
+  "dependencies": {
+    "vue": "^3.1.5",
+    "vue-router": "^4.0.10",
+    "vuex": "^4.0.2"
   }
 }
