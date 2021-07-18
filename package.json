@@ -13,9 +13,11 @@
     "@vitejs/plugin-vue": "^1.2.5",
     "@vue/compiler-sfc": "^3.1.5",
     "sass": "^1.35.2",
-    "vite": "^2.4.2"
+    "vite": "^2.4.2",
+    "vite-plugin-style-import": "^1.0.1"
   },
   "dependencies": {
+    "element-plus": "^1.0.2-beta.55",
     "vue": "^3.1.5",
     "vue-router": "^4.0.10",
     "vuex": "^4.0.2"

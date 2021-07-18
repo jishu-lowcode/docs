@@ -1,5 +1,7 @@
 <template>
-  <Hello name="Vite User Fallow" />
+  <Main :aside="false">
+    <Home />
+  </Main>
 </template>
 
 <style scoped>
@@ -13,8 +15,9 @@
 </style>
 
 <script setup>
+import Main from '../components/Main.vue'
+import Home from '../components/Home.vue'
 import { useStore } from "vuex";
-import Hello from "../components/Hello.vue";
 const store = useStore()
 console.log(store.state.test)
 store.commit('changeTest')
