@@ -12,6 +12,9 @@ import {
   ElHeader,
   ElAside,
   ElFooter,
+  ElMenu,
+  ElMenuItem,
+  ElMenuItemGroup,
 } from 'element-plus'
 
 import 'element-plus/packages/theme-chalk/src/base.scss'
@@ -25,6 +28,9 @@ const components = [
   ElHeader,
   ElAside,
   ElFooter,
+  ElMenu,
+  ElMenuItem,
+  ElMenuItemGroup
 ]
 
 const plugins = []

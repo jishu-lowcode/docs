@@ -1,6 +1,6 @@
 <template>
   <el-container>
-    <el-header v-if="header">
+    <el-header class="header" v-if="header">
       <Head />
     </el-header>
     <el-container>
@@ -20,6 +20,9 @@
 </template>
 
 <style lang="scss" scoped>
+.header {
+  border-bottom: 1px solid #dcdfe6;
+}
 </style>
 
 <script setup>
@@ -35,7 +38,7 @@ defineProps({
   },
   footer: {
     type: Boolean,
-    default: true
+    default: false
   },
   aside: {
     type: Boolean,
