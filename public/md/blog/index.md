@@ -5,6 +5,6 @@
 ```javascript
 // a function test
 function test(e) {
-  return e.toString()
+  return e.toString('1')
 }
 ```
