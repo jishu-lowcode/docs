@@ -1,6 +1,7 @@
 <template>
   <Main :aside="false">
     <Home />
+    <Markdown :mark="mark" />
   </Main>
 </template>
 
@@ -17,9 +18,21 @@
 <script setup>
 import Main from '../components/Main.vue'
 import Home from '../components/Home.vue'
+import Markdown from '../components/Markdown.vue' 
+import {ref} from 'vue'
 import { useStore } from "vuex";
+import axios from 'axios'
+import marked from 'marked'
 const store = useStore()
 console.log(store.state.test)
 store.commit('changeTest')
 console.log(store.state.test)
+
+const mark = ref('')
+
+axios({
+  url: '/md/blog/index.md'
+}).then(res => {
+  mark.value = res.data
+})
 </script>
