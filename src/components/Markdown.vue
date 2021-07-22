@@ -7,7 +7,7 @@
 
 <script setup>
 import 'github-markdown-css'
-import 'highlight.js/styles/github.css'
+import 'highlight.js/styles/monokai.css'
 import { defineProps, computed } from 'vue'
 import { markdown } from '../utils'
 
