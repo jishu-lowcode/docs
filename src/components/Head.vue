@@ -1,7 +1,9 @@
 <template>
   <div class="head">
-    <img class="logo" src="/images/logo_s.jpg">
-    <el-menu :default-active="nav"  mode="horizontal" @select="handleSelect">
+    <a href="/">
+      <img class="logo" src="/images/logo_s.jpg" />
+    </a>
+    <el-menu :default-active="nav" mode="horizontal" @select="handleSelect">
       <el-menu-item index="1">文档</el-menu-item>
       <el-menu-item index="2">博客</el-menu-item>
     </el-menu>
@@ -19,14 +21,19 @@
   .logo {
     border-radius: 4px;
   }
-
-  
 }
 </style>
 
 
 <script setup>
-import {defineProps} from 'vue'
+import { defineProps, computed } from 'vue'
+import { useStore } from 'vuex'
+import { useRouter } from 'vue-router'
+
+const store = useStore()
+const router = useRouter()
+
+const { state, commit } = store
 
 defineProps({
   nav: {
@@ -35,8 +42,17 @@ defineProps({
   }
 })
 
+const nav = computed(() => store.state.nav)
+
 const handleSelect = (e) => {
   console.log(e)
+  commit('changeNav', { nav: e })
+  if (e === '1') {
+    router.push('/docs')
+  }
+  if (e === '2') {
+    router.push('/blog')
+  }
 }
 
 </script>

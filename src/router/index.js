@@ -7,6 +7,17 @@ export default createRouter({
       name: 'Index',
       path: '/',
       component: () => import('../views/Index.vue')
+    },
+    {
+      name: 'Docs',
+      path: '/docs',
+      component: () => import('../views/Docs.vue'),
+      children: []
+    },
+    {
+      name: 'Blog',
+      path: '/blog',
+      component: () => import('../views/Blog.vue'),
     }
   ]
 })

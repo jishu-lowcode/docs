@@ -23,9 +23,6 @@ import { ref } from 'vue'
 import { useStore } from "vuex";
 import axios from 'axios'
 const store = useStore()
-console.log(store.state.test)
-store.commit('changeTest')
-console.log(store.state.test)
 
 const mark = ref('')
 

@@ -3,6 +3,11 @@
 </template>
 
 <style lang="scss" scoped>
+.markdown-body {
+  width: 100%;
+  max-width: 800px;
+  margin: 20px auto;
+}
 </style>
 
 <script setup>
