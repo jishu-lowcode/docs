@@ -3,8 +3,6 @@
   <div class="description">现代的低代码平台搭建框架</div>
   <img class="logo" src="/images/logo_m.jpg" />
   <div class="intro-box">
-    <div class="title">📦 安装</div>
-    <div class="title">🚀 运行</div>
     <div class="title"></div>
   </div>
 </template>

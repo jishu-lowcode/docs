@@ -3,19 +3,25 @@
 </template>
 
 <style lang="scss" scoped>
+.markdown-body {
+  width: 100%;
+  max-width: 800px;
+  margin: 20px auto;
+}
 </style>
 
 <script setup>
 import 'github-markdown-css'
+import 'highlight.js/styles/monokai.css'
 import { defineProps, computed } from 'vue'
-import marked from '../utils'
-import hljs from 'highlight.js'
+import { markdown } from '../utils'
 
 const props = defineProps({
-  mark: String
+  mark: {
+    type: String,
+    default: '',
+  }
 })
-console.log(marked(props.mark));
-console.log(hljs.highlightAuto(marked(props.mark)));
-const html = computed(() => hljs.highlightAuto(marked(props.mark)).value)
 
+const html = computed(() => markdown(props.mark))
 </script>

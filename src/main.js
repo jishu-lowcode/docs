@@ -30,7 +30,7 @@ const components = [
   ElFooter,
   ElMenu,
   ElMenuItem,
-  ElMenuItemGroup
+  ElMenuItemGroup,
 ]
 
 const plugins = []
