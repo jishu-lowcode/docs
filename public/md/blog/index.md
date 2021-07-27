@@ -25,6 +25,8 @@ function test(e) {
 npm install -D test
 ```
 
+![图片](../../images/logo_m.jpg)
+
 ### 🚀 运行
 
 ### 🚀 运行

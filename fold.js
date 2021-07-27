@@ -1,22 +1,46 @@
 const path = require('path')
 const fs = require('fs')
 
-let json = {}
-
-// 读取/public/md文件夹，获取文件结构，返回json
-function getFold(dir) {
-  let files = fs.readdirSync(dir)
-  files.forEach((file) => {
+const getFold = dir => {
+  let json = {}
+  const files = fs.readdirSync(dir)
+  files.forEach(file => {
     let filePath = path.join(dir, file)
     if (fs.statSync(filePath).isDirectory()) {
-      let fold = getFold(filePath)
-      fold.name = file
-      json[file] = fold
+      json[file] = {
+        name: file,
+        path: filePath,
+        children: getFold(filePath)
+      }
     } else {
-      json[file] = file
+      json[file] = {
+        name: file,
+        path: filePath
+      }
     }
   })
+
   return json
 }
 
-console.dir(JSON.stringify(getFold('public/md')))
+// // 读取/public/md文件夹，获取文件结构，返回json
+// function getFold(dir) {
+//   let files = fs.readdirSync(dir)
+//   files.forEach((file) => {
+//     let filePath = path.join(dir, file)
+//     if (fs.statSync(filePath).isDirectory()) {
+//       let fold = getFold(filePath)
+//       fold.name = file
+//       json[file] = fold
+//     } else {
+//       json[file] = file
+//     }
+//   })
+//   return json
+// }
+
+const stream = fs.createWriteStream('public/tree.json')
+
+stream.write(JSON.stringify(getFold('public/md')))
+
+stream.end()
