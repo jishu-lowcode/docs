@@ -36,7 +36,6 @@ axios({
   url: '/tree.json'
 }).then(res => {
   console.log(res.data)
-  
 })
 
 </script>
