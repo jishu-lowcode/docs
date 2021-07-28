@@ -27,7 +27,7 @@ const store = useStore()
 const mark = ref('')
 
 axios({
-  url: '/md/blog/index.md'
+  url: '/temp/README.md'
 }).then(res => {
   mark.value = res.data
 })
@@ -36,6 +36,7 @@ axios({
   url: '/tree.json'
 }).then(res => {
   console.log(res.data)
+  store.commit('setMd', {md: res.data})
 })
 
 </script>

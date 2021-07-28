@@ -8,8 +8,7 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "md:tree": "node fold.js",
-    "md:watch": ""
+    "md:tree": "node fold.js"
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^1.2.5",

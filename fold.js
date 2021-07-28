@@ -2,25 +2,25 @@ const path = require('path')
 const fs = require('fs')
 
 const getFold = dir => {
-  let json = {}
+  let jsonArr = []
   const files = fs.readdirSync(dir)
   files.forEach(file => {
     let filePath = path.join(dir, file)
     if (fs.statSync(filePath).isDirectory()) {
-      json[file] = {
-        name: file,
+      jsonArr.push({
+        label: file,
         path: filePath,
         children: getFold(filePath)
-      }
+      })
     } else {
-      json[file] = {
-        name: file,
+      jsonArr.push({
+        label: file,
         path: filePath
-      }
+      })
     }
   })
 
-  return json
+  return jsonArr
 }
 
 const stream = fs.createWriteStream('public/tree.json')
