@@ -27,4 +27,30 @@
   height: 100%;
   overflow: auto;
 }
+
+.el-aside {
+  padding: 20px 0;
+}
+
+.markdown-body {
+  p {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
 </style>
+
+<script setup>
+import { useStore } from "vuex";
+import axios from 'axios'
+const { state, commit } = useStore()
+
+axios({
+  url: '/tree.json'
+}).then(res => {
+  const { data } = res
+  console.log(data)
+  commit('setMd', { md: data })
+})
+</script>

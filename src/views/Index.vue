@@ -20,23 +20,15 @@ import Main from '../components/Main.vue'
 import Home from '../components/Home.vue'
 import Markdown from '../components/Markdown.vue'
 import { ref } from 'vue'
-import { useStore } from "vuex";
 import axios from 'axios'
 
-const store = useStore()
+
 const mark = ref('')
 
 axios({
-  url: '/temp/README.md'
+  url: '/md/home.md'
 }).then(res => {
   mark.value = res.data
-})
-
-axios({
-  url: '/tree.json'
-}).then(res => {
-  console.log(res.data)
-  store.commit('setMd', {md: res.data})
 })
 
 </script>
