@@ -5,7 +5,7 @@
     </el-header>
     <el-container>
       <el-aside v-if="aside">
-        <Side />
+        <slot name="side"></slot>
       </el-aside>
       <el-container>
         <el-main class="main">
