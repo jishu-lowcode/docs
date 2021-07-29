@@ -7,7 +7,7 @@
   "license": "MIT",
   "scripts": {
     "dev": "vite",
-    "build": "vite build",
+    "build": "node fold.js && vite build",
     "md:tree": "node fold.js"
   },
   "devDependencies": {
