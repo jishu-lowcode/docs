@@ -47,7 +47,7 @@ import axios from 'axios'
 const { state, commit } = useStore()
 
 axios({
-  url: '/tree.json'
+  url: '/md/tree.json'
 }).then(res => {
   const { data } = res
   console.log(data)

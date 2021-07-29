@@ -23,7 +23,7 @@ const getFold = dir => {
   return jsonArr
 }
 
-const stream = fs.createWriteStream('public/tree.json')
+const stream = fs.createWriteStream('public/md/tree.json')
 
 stream.write(JSON.stringify(getFold('public/md')).replace(/\\\\/g, '/').replace(/"public/g, '"'))
 
